@@ -1,18 +1,16 @@
 import React from 'react';
-import './App.css';
-import Index from './Components/Index'
+import Header from './Header';
+
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 
-function App() {
+const Index: React.FC= () => {
   return (
-    <div className="App">
-      <div className="container-fluid">
-      <Index/>
-      </div>
+    <div>
+      <Header/>
     </div>
   );
 }
 
-export default App;
+export default Index;
