@@ -1,0 +1,49 @@
+#barra1{
+    background-color: white;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    border-radius: 50px;
+    position: relative;
+    top: -140px;
+}
+#imglogo1{
+    z-index: 2;
+}
+#txtLogo{
+    color: #993366;
+    font-family: ABeeZee;
+    font-size: xxx-large;
+    margin: 0px;
+    padding-left: 200px;
+}
+#botonera1{
+    align-self: center;
+    align-items: flex-end;
+}
+#br{
+    background-color: #993366 ;
+    color: white;
+    border-radius: 50px;
+    margin-left:20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#br:hover{
+    background-color: #b94a82 ;
+    color: white;
+}
+#bis{
+    background-color: #993366 ;
+    color: white;
+    border-radius: 50px;
+    margin-left:20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#bis:hover{
+    background-color: #b94a82 ;
+    color: white;
+}

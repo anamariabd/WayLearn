@@ -1,14 +1,16 @@
 import React from 'react';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
+import 'bootstrap-material-design'
+import 'jquery'
+import logo from '../img/Group 10.png';
+import '../Navbar.css'
 
 const Navbar: React.FC= () => {
   return (
     <div className="row" id="barra2">
-    <div className="col">
-        <a  className="vinculo" href={'x'}>WayLearn</a>
-    </div>
+        <div className="col">
+            <img id="imglogo2" src={logo} alt = "logo"/>
+            <a className="vinculo" href={'x'}>WayLearn</a>
+        </div>
     <div className="col" id="botonera2">
         <div className="row">
             <div className="col">
