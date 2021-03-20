@@ -81,7 +81,7 @@ const formRegister: React.FC= () => {
         </div>
         <div className="row formulario">
             <div className="col">
-                <button type="button" className="btn btn-raised botonb1">Registrarse</button>
+                <button type="button" className="btn btn-raised botonb1" id="registerButton">Registrarse</button>
             </div>
         </div>
     </div>

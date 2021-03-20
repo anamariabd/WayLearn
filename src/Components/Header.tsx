@@ -18,7 +18,7 @@ const Header: React.FC<{titulo:string}> = ({titulo}) => {
               <div className="col-3" id="botonera1">
                 
                 <a type="button" href="/login" className="btn" id="bis">Iniciar sesion</a>
-                <button type="button" className="btn" id="br">Registrarse</button>
+                <a type="button" href="/register" className="btn" id="br">Registrarse</a>
               </div>
           </div>
         </div>
