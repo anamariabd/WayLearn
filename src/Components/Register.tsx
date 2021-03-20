@@ -1,18 +1,19 @@
 import React from 'react';
 import Header2 from './Header2';
-import FormLogin from './formLogin';
+import FormRegister from './formRegister';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-import '../login.css';
+import '../register.css';
+import formRegister from './formRegister';
 
-const Login: React.FC= () => {
+const Register: React.FC= () => {
   return (
     <div>
-      <Header2 titulo="Inicio de sesion"/>
-      <FormLogin/>
+      <Header2 titulo="Registro"/>
+      <FormRegister></FormRegister>
     </div>
   );
 }
 
-export default Login;
+export default Register;

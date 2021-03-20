@@ -13,7 +13,7 @@ const Header2: React.FC<{titulo:string}> = ({titulo}) => {
             </div>
             <div className="row" >
                 <div className="col-8" id="barra1">
-                    <p id="txt">INICIO DE SESIÓN</p>
+                    <p id="txt">{titulo}</p>
                 </div>
             </div>
         </div>

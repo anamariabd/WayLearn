@@ -5,6 +5,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import {BrowserRouter, Route} from 'react-router-dom';
 import index from './Components/Index';
 import login from './Components/Login';
+import registro from './Components/Register';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <BrowserRouter>
           <Route exact path="/" component={index}/>
           <Route exact path="/login" component={login}/>
+          <Route exact path="/register" component={registro}/>
         </BrowserRouter>        
       </div>
     </div>

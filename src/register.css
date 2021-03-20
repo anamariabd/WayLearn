@@ -1,0 +1,33 @@
+#bloque2{
+    background-color: #669966;
+    margin-left: 200px;
+    margin-right: 200px;
+    border-radius: 50px;
+    padding: 100px;
+    position: relative;
+    top: -100px;
+}
+#imgAvatar{
+    text-align: center;
+}
+.formulario{
+    text-align: center;
+    margin: 15px;
+}
+.form-control{
+    background-color: white;
+    border-radius: 50px;
+    padding-left: 10px;
+}
+.form-control:enabled{
+    background-color: white;
+}
+.btn{
+    margin-top: 20px;
+    background-color: #FFCC00;
+    border-radius: 50px;
+    width: 100%;
+}
+.btn:hover{
+    background-color: #ffffff;
+}
