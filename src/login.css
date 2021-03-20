@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
+#barra1{
+    background-color: white;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    border-radius: 50px;
+    position: relative;
+    top: -140px;
+}
+#imglogo1{
+    z-index: 2;
+}
+#txt{
+    color: #993366;
+    font-family:frijole;
+    font-size: xxx-large;
+    margin: 0px;
+    padding-left: 200px;
+}

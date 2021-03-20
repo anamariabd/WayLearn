@@ -1,7 +1,6 @@
 import React from 'react';
 import 'bootstrap-material-design'
 import 'jquery'
-import '../indexContent.css';
 import Niños from '../img/FilosofiaNiños 1.png'
 
 const IndexContent: React.FC= () => {
@@ -65,23 +64,24 @@ const IndexContent: React.FC= () => {
                 </div>
             </div>
             <div className="row">
-                    <div className="col">
-                        <div className="card card2">
-                            <div className="card-body">
-                                <h6>
-                                    ERRRE
-                                </h6>
-                              <p>
+                <div className="col">
+                    <div className="card card2">
+                        <div className="card-body">
+                            <h6>
+                                ERRRE
+                            </h6>
+                            <p>
                                 El método de estudio “ERRRE” que por sus siglas significa: Exploración, Recepción, Reflexión,
                                  Repaso, Evaluación; es un procedimiento o conjunto de reglas que se aplican para lograr un objetivo 
                                  que es estudiar, es enseña a comprender el material para asimilar y repasar un tema en específico.
-                              </p>
-                            </div>
+                            </p>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
    </div>
+   
       
   );
 }

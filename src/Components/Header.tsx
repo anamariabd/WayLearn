@@ -2,9 +2,9 @@ import React from 'react';
 import 'bootstrap-material-design'
 import 'jquery'
 import logo from '../img/Group 10.png'
-import '../Header.css';
 
-const Header: React.FC= () => {
+
+const Header: React.FC<{titulo:string}> = ({titulo}) => {
   return (
     <div className="row">
         <div className="col">
@@ -12,11 +12,12 @@ const Header: React.FC= () => {
             <img id="imglogo1" src={logo} alt = "logo"/>
           </div>
           <div className="row" id="barra1">
-            <div className="col-9" >
-              <p id="txtLogo">WayLearn</p>
+            <div className="col-9">
+              <p id="txtLogo">{titulo}</p>
             </div>
               <div className="col-3" id="botonera1">
-                <button type="button" className="btn" id="bis">Iniciar sesion</button>
+                
+                <a type="button" href="/login" className="btn" id="bis">Iniciar sesion</a>
                 <button type="button" className="btn" id="br">Registrarse</button>
               </div>
           </div>

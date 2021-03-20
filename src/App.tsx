@@ -1,15 +1,19 @@
 import React from "react";
 import "./App.css";
-import Index from "./Components/Index";
 import 'bootstrap-material-design'
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import {BrowserRouter, Route} from 'react-router-dom';
+import index from './Components/Index';
+import login from './Components/Login';
 
 function App() {
   return (
     <div className="App">
       <div className="container-fluid">
-        <Index />
-        <div className="row" id="footer">Waylearn official</div>
+        <BrowserRouter>
+          <Route exact path="/" component={index}/>
+          <Route exact path="/login" component={login}/>
+        </BrowserRouter>        
       </div>
     </div>
   );
