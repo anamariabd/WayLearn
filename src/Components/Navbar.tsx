@@ -2,7 +2,6 @@ import React from 'react';
 import 'bootstrap-material-design'
 import 'jquery'
 import logo from '../img/Group 10.png';
-import '../Navbar.css'
 
 const Navbar: React.FC= () => {
   return (
