@@ -22,12 +22,12 @@
 .form-control:enabled{
     background-color: white;
 }
-.btn{
-    margin-top: 20px;
+.btn:hover{
+    background-color: #ffffff;
+}
+#registerButton{
     background-color: #FFCC00;
     border-radius: 50px;
     width: 100%;
-}
-.btn:hover{
-    background-color: #ffffff;
+    margin: 0%;
 }
