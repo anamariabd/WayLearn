@@ -12,7 +12,7 @@
     font-size: x-large;
     margin: 0px;
     position: relative;
-    margin-left: -200px;
+    margin-left: -250px;
 }
 
 #search{
@@ -20,7 +20,7 @@
 }
 
 .center-buscar{
-    margin-right: 30%;
+    margin-right: 20%;
 }
 
 .width-search{

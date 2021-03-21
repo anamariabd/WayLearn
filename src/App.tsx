@@ -6,7 +6,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import index from './Components/Index';
 import login from './Components/Login';
 import registro from './Components/Register';
-import Home from './Components/Home'
+import Home from './Single-components/Home/Home'
 
 function App() {
   return (

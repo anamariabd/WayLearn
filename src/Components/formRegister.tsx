@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 const FormRegister: React.FC = () => {
     
     
-    const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm();
     
     
   const onSubmit = (data: any) => {
