@@ -6,17 +6,17 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import index from './Components/Index';
 import login from './Components/Login';
 import registro from './Components/Register';
+import Home from './Components/Home'
 
 function App() {
   return (
     <div className="App">
-      <div className="container-fluid">
         <BrowserRouter>
           <Route exact path="/" component={index}/>
           <Route exact path="/login" component={login}/>
-          <Route exact path="/register" component={registro}/>
+          <Route exact path="/register" component={registro} />
+          <Route exact path="/Home" component={Home}/>
         </BrowserRouter>        
-      </div>
     </div>
   );
 }

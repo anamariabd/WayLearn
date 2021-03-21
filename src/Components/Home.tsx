@@ -1,18 +1,17 @@
 import React from 'react';
-import Header2 from './Header2';
-import FormLogin from './formLogin';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
+import Navbar from '../Single-components/Navbar'
 import '../login.css';
 
-const Login: React.FC= () => {
+const Home: React.FC= () => {
   return (
-    <div className="container-fluid">
-      <Header2 titulo="Inicio de sesion"/>
-      <FormLogin/>
+    <div>
+      <Navbar/>
+       
     </div>
   );
 }
 
-export default Login;
+export default Home;
