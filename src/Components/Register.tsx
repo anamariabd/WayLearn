@@ -9,7 +9,7 @@ import formRegister from './formRegister';
 
 const Register: React.FC= () => {
   return (
-    <div>
+    <div className="Container-fluid">
       <Header2 titulo="Registro"/>
       <FormRegister></FormRegister>
     </div>
