@@ -25,11 +25,14 @@ const FormRegister: React.FC = () => {
                     <input type="text" name="firstName" 
                 ref={register({ required: true })} placeholder="Primer nombre" className="form-control"></input>
                   </div>
-            </div> 
-            <div className="col">
-                <div className="input-group">
-                    <input type="text" name="rol" placeholder="Rol" className="form-control"></input>
                   </div>
+                  
+                  <div className="col">
+                          <select className="select" >
+                               <option disabled selected> Tipo de usuario </option>
+                                   <option data-tokens="Docente"> Docente </option>
+                                    <option data-tokens="Estudiante"> Estudiante</option>
+                         </select>   
             </div>               
         </div>
         <div className="row formulario">
@@ -64,7 +67,7 @@ const FormRegister: React.FC = () => {
             </div> 
             <div className="col">
                 <div className="input-group">
-                    <input type="text" name="Fecha"  placeholder="Fecha de nacimiento" className="form-control"></input>
+                    <input type="date" name="Fecha"  placeholder="Fecha de nacimiento" className="form-control"></input>
                   </div>
             </div>               
         </div>
