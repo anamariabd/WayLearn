@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap-material-design";
 import "jquery";
-import avatar from "../img/avatar.png";
+import avatar from '../img/avatar.png'
 import logoEmail from "../img/Group.png";
 import LogoPassword from "../img/Group 12.png";
 import { useForm } from "react-hook-form";
