@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Login from './Components/Login'
-import Register from './Components/Register'
+import Login from './Pages/Login'
+import Register from './Pages/Register'
 import Index from './Components/Index'
 
 class Router extends Component{

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "bootstrap-material-design";
 import "jquery";
 import avatar from "../img/avatar.png";
