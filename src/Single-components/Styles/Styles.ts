@@ -5,7 +5,6 @@ export const styles = {
     font: '5 px'
   },
   warning: {
-    
     background: 'yellow'
   },
 };

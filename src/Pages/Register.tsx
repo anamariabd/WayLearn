@@ -1,11 +1,10 @@
 import React from 'react';
-import Header2 from './Header2';
-import FormRegister from './formRegister';
+import Header2 from '../Components/Header2';
+import FormRegister from '../Components/FormRegister';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import '../register.css';
-import formRegister from './formRegister';
 
 const Register: React.FC= () => {
   return (

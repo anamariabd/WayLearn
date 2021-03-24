@@ -1,9 +1,10 @@
 #bloque2{
     background-color: #669966;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 20%;
+    margin-right: 20%;
     border-radius: 50px;
-    padding: 100px;
+    padding: 8%;
+    padding-left: 10%;
     position: relative;
     top: -100px;
 }
@@ -14,11 +15,31 @@
     text-align: center;
     margin: 15px;
 }
-.form-control{
-    background-color: white;
+
+.select{
+    display: block;
+    font-size: 16px;
+    font-family: 'Verdana', sans-serif;
+    width: 100%;
+    height: 75%;
+    border: 1px solid #aaa;
+    border-radius: 50px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
     border-radius: 50px;
     padding-left: 10px;
+    padding-top: 6%;
+    padding-bottom: 6%;
 }
+
+.select:enabled{
+    
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
 .form-control:enabled{
     background-color: white;
 }

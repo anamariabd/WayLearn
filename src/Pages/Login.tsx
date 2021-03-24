@@ -1,6 +1,6 @@
 import React from 'react';
-import Header2 from './Header2';
-import FormLogin from './formLogin';
+import Header2 from '../Components/Header2';
+import FormLogin from '../Components/FormLogin';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
