@@ -33,8 +33,8 @@ const FormRegister: React.FunctionComponent = () => {
                     </Col>
                         
                     <Col>
-                    <Form.Control as="select" className="select" custom>
-                            <option disabled selected> Tipo de usuario </option>
+                    <Form.Control as="select" className="select" custom >
+                            <option disabled selected className="option"> Tipo de usuario </option>
                             <option data-tokens="Docente"> Docente </option>
                             <option data-tokens="Estudiante"> Estudiante</option>
                         </Form.Control>

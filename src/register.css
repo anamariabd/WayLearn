@@ -1,10 +1,9 @@
 #bloque2{
     background-color: #669966;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 200px;
+    margin-right: 200px;
     border-radius: 50px;
-    padding: 8%;
-    padding-left: 10%;
+    padding: 100px;
     position: relative;
     top: -100px;
 }
@@ -15,31 +14,11 @@
     text-align: center;
     margin: 15px;
 }
-
-.select{
-    display: block;
-    font-size: 16px;
-    font-family: 'Verdana', sans-serif;
-    width: 100%;
-    height: 75%;
-    border: 1px solid #aaa;
-    border-radius: 50px;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
+.form-control{
+    background-color: white;
     border-radius: 50px;
     padding-left: 10px;
-    padding-top: 6%;
-    padding-bottom: 6%;
 }
-
-.select:enabled{
-    
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-}
-
 .form-control:enabled{
     background-color: white;
 }
@@ -51,4 +30,10 @@
     border-radius: 50px;
     width: 100%;
     margin: 0%;
+}
+.select{
+    vertical-align: center;
+    border-radius: 50px;
+    padding-left: 10px;
+    height: 50px;
 }
