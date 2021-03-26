@@ -6,7 +6,8 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import index from './Components/Index';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
-import Home from './Pages/Home/Home'
+import Home from './Pages/Home/Home';
+import Courses from './Pages/Cursos';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register} />
           <Route exact path="/Home/:TypeUser" component={Home}/>
+          <Route exact path="/courses" component={Courses} />
         </BrowserRouter>        
     </div>
   );
