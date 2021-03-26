@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import  { Redirect } from 'react-router-dom'
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -39,6 +39,7 @@ const MisGrupos: Group[] = [
 ];
 
 const Grupos = () => {
+
   return (
     <>
       <Col>
@@ -47,7 +48,6 @@ const Grupos = () => {
           <CardDeck>
             {MisGrupos.map((Grupo, index) => {
               return (
-
                 <Card className="course" key={index} onClick={() => <Redirect to={'/home/'+ Grupo.Number} /> } >
                   <Card.Body>
                     <Card.Title>{Grupo.Number}</Card.Title>
