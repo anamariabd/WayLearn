@@ -9,7 +9,7 @@ const Header2: React.FC<{titulo:string}> = ({titulo}) => {
     <div className="row">
         <div className="col">
             <div className="row">
-                <img id="imglogo1" src={logo}/>
+                <img id="imglogo1" src={logo} alt="logo"/>
             </div>
             <div className="row" >
                 <div className="col-8" id="barra1">

@@ -31,3 +31,9 @@
     width: 100%;
     margin: 0%;
 }
+.select{
+    vertical-align: center;
+    border-radius: 50px;
+    padding-left: 10px;
+    height: 50px;
+}
