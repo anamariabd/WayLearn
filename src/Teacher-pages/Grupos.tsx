@@ -3,7 +3,7 @@ import  { Redirect, Link } from 'react-router-dom'
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-import './Grupos.css'
+import './Styles/Grupos.css'
 import { Col, Card, CardDeck } from "react-bootstrap";
 
 interface Group {

@@ -6,8 +6,8 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import index from './Components/Index';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
-import Home from './Pages/Home/Home';
-import Courses from './Pages/Cursos';
+import Home from './Teacher-pages/Home';
+import Courses from './Student-pages/Cursos';
 
 function App() {
   return (

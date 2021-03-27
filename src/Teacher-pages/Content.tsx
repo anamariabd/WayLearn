@@ -1,5 +1,5 @@
 import { Redirect } from 'react-router';
-import Grupos from './Mis-grupos/Grupos'
+import Grupos from './Grupos'
 import Error from '../Pages/Error404'
 
 interface ContainerProps {

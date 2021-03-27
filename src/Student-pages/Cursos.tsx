@@ -2,7 +2,7 @@ import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-import '../Courses.css';
+import './Courses.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Header from '../Components/Header3';
 import Card from '../Components/cardSubject';
@@ -29,7 +29,9 @@ const Cursos : React.FC= () => {
                 <Card titulo="Geometria"/>
                 <Card titulo="Etica"/>
                 <Card titulo="Religion"/>
-                <Card titulo="Informatica"/>
+                <Card titulo="Informatica" />
+                <Card titulo="Ciencias Sociales" />
+                <Card titulo="Ciencias naturales" />
             </Row>
           </Col>
           <Col md="3">

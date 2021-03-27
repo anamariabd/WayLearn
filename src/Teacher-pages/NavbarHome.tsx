@@ -2,8 +2,8 @@ import React from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-import "./Navbar.css";
-import logo from "../../img/Group 10.png";
+import "./Styles/Navbar.css";
+import logo from "../img/Group 10.png";
 
 import { Navbar, Form, Row, Nav, Button, FormControl } from "react-bootstrap";
 
