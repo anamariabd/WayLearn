@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import  { Redirect } from 'react-router-dom'
+import  { Redirect, Link } from 'react-router-dom'
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
@@ -48,11 +48,17 @@ const Grupos = () => {
           <CardDeck>
             {MisGrupos.map((Grupo, index) => {
               return (
-                <Card className="course" key={index} onClick={() => <Redirect to={'/home/'+ Grupo.Number} /> } >
+                
+                <Link to={"/home/"+Grupo.Number}>
+                <Card className="course" key={index} /*onClick={() => <Redirect to={'/home/'+ Grupo.Number} /> }*/ >
+                
                   <Card.Body>
                     <Card.Title>{Grupo.Number}</Card.Title>
-                  </Card.Body>
-                </Card>
+                    </Card.Body>
+                    
+                  </Card>
+                
+                </Link>
               );
             })}
           </CardDeck>

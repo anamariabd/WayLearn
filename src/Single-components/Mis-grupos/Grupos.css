@@ -20,7 +20,6 @@
     min-width: 20%;
 }
 
-
 .card-deck .card:hover{
     background: rgb(14, 107, 18);
     cursor: pointer;
@@ -30,6 +29,14 @@
 .card-title{
     font-size: 56px;
 }
+ 
+.card-deck a:link, a:visited, a:active {
+    text-decoration:none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+} 
 
 @media screen and (max-width: 992px) {
  
