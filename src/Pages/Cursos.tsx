@@ -6,7 +6,8 @@ import '../Courses.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Header from '../Components/Header3';
 import Card from '../Components/cardSubject';
-
+import NoteBoard from '../Components/NoteBoard';
+import Toolbar from '../Components/Toolbar';
 
 const Cursos : React.FC= () => {
   return (
@@ -14,7 +15,7 @@ const Cursos : React.FC= () => {
         <Header/>
         <Row>
           <Col md="3">
-
+            <Toolbar/>
           </Col>
           <Col md="6">
             <Row>
@@ -30,10 +31,11 @@ const Cursos : React.FC= () => {
                 <Card titulo="Etica"/>
                 <Card titulo="Religion"/>
                 <Card titulo="Informatica"/>
+                <Card titulo="Sociales"/>
             </Row>
           </Col>
           <Col md="3">
-            
+            <NoteBoard/>
           </Col>
         </Row>
     </Container>
