@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap-material-design'
 import 'jquery'
-import { Button, Col, Figure, Row } from 'react-bootstrap';
+import {  Col, Figure, Row } from 'react-bootstrap';
 import logo from '../img/pngocean 2.png'
 
 const CardSubject: React.FC<{titulo:string;link:string}> = ({titulo,link}) => {
