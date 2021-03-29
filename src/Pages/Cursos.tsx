@@ -19,19 +19,19 @@ const Cursos : React.FC= () => {
           </Col>
           <Col md="6">
             <Row>
-              <h1>
-                Tus Materias
+              <h1 className="tituloM">
+                Mis Materias
               </h1>
             </Row>
             <Row>
-                <Card titulo="Matematicas"/>
-                <Card titulo="Español"/>
-                <Card titulo="ingles"/>
-                <Card titulo="Geometria"/>
-                <Card titulo="Etica"/>
-                <Card titulo="Religion"/>
-                <Card titulo="Informatica"/>
-                <Card titulo="Sociales"/>
+                <Card titulo="Matematicas" link="/matematicas"/>
+                <Card titulo="Español" link="/español"/>
+                <Card titulo="ingles" link="/ingles"/>
+                <Card titulo="Geometria" link="/geometria"/>
+                <Card titulo="Etica" link="/etica"/>
+                <Card titulo="Religion" link="/religion"/>
+                <Card titulo="Informatica" link="/informatica"/>
+                <Card titulo="Sociales" link="/sociales"/>
             </Row>
           </Col>
           <Col md="3">
