@@ -24,14 +24,14 @@ const Cursos : React.FC= () => {
               </h1>
             </Row>
             <Row>
-                <Card titulo="Matematicas" link="/matematicas"/>
-                <Card titulo="Español" link="/español"/>
-                <Card titulo="ingles" link="/ingles"/>
-                <Card titulo="Geometria" link="/geometria"/>
-                <Card titulo="Etica" link="/etica"/>
-                <Card titulo="Religion" link="/religion"/>
-                <Card titulo="Informatica" link="/informatica"/>
                 <Card titulo="Sociales" link="/sociales"/>
+                <Card titulo="Artistica" link="/artistica"/>
+                <Card titulo="Español" link="/español"/>
+                <Card titulo="Matematicas" link="/matematicas"/>
+                <Card titulo="Etica" link="/etica"/>
+                <Card titulo="ingles" link="/ingles"/>
+                <Card titulo="Naturales" link="/naturales"/>
+                <Card titulo="Informatica" link="/informatica"/>
             </Row>
           </Col>
           <Col md="3">

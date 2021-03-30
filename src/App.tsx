@@ -8,6 +8,7 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Home from './Teacher-pages/Home';
 import Courses from './Student-pages/Cursos';
+import Sociales from './Student-pages/Sociales';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/Home/:TypeUser?" component={Home} />
           <Route exact path="/courses" component={Courses} />
+          <Route exact path="/sociales" component={Sociales} />
         </BrowserRouter>        
     </div>
   );
