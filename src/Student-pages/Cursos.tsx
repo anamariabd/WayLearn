@@ -2,7 +2,7 @@ import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
-import '../Courses.css';
+import './Courses.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Header from '../Components/Header3';
 import Card from '../Components/cardSubject';
