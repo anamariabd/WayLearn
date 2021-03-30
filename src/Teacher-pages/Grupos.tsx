@@ -49,7 +49,7 @@ const Grupos = () => {
             {MisGrupos.map((Grupo, index) => {
               return (
                 
-                <Link to={"/home/"+Grupo.Number}>
+              /*  <a href={"/home/"+Grupo.Number}> */
                 <Card className="course" key={index} /*onClick={() => <Redirect to={'/home/'+ Grupo.Number} /> }*/ >
                 
                   <Card.Body>
@@ -58,7 +58,7 @@ const Grupos = () => {
                     
                   </Card>
                 
-                </Link>
+              /*  </a> */
               );
             })}
           </CardDeck>
