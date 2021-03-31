@@ -5,22 +5,28 @@
 }
 
 .subtitle{
-  color: #000;
+  color: rgb(37, 35, 35);
   font-family: Roboto;
   margin-top: 5%;
   margin-left: 5%;
 }
 
-.card-deck .card{
+.cardtitle{
+    color: rgb(236, 230, 230);
+    font-family: Roboto;
+  }
+
+.card-deck .course{
     background: #669966;
     align-items: center;
     width: 20%;
-    max-width: 20%;
+    max-width: 10%;
     margin-top: 4%;
-    min-width: 20%;
+    min-width: 15%;
+    margin-right: 5%;
 }
 
-.card-deck .card:hover{
+.card-deck .course:hover{
     background: rgb(14, 107, 18);
     cursor: pointer;
 	transform: translateY(15px); 
@@ -28,24 +34,31 @@
 
 .card-title{
     font-size: 56px;
+    font-style: inherit;
+    justify-content: center;
+}
+
+div .card-title{
+    align-items: center;
 }
 
 @media screen and (max-width: 992px) {
  
-    .card-deck .card{
+    .card-deck .course{
         background: #669966;
        padding-top: 5%;
         padding-left: 8%;
         padding-right: 8%;
         align-items: center;
         min-width: 25%;
+        border-radius: 2%;
     }
 
   }
 
   @media screen and (max-width: 650px){
       
-    .card-deck .card{
+    .card-deck .course{
         padding-right: 8%;
         margin-right: 20%;
         margin-bottom: 8%;
@@ -61,7 +74,7 @@
 
 @media screen and (max-width: 570px){
     
-    .card-deck .card{
+    .card-deck .course{
          min-width: 50%;
      }
 

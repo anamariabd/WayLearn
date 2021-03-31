@@ -3,6 +3,7 @@ import 'bootstrap-material-design'
 import 'jquery'
 import { useForm } from "react-hook-form";
 import { Col, Form, Row } from 'react-bootstrap';
+import TeacherService from '../Services/teacherService'
 
 
 const FormRegister: React.FunctionComponent = () => {
@@ -11,9 +12,27 @@ const FormRegister: React.FunctionComponent = () => {
   const { register, handleSubmit } = useForm();
     
     
-  const onSubmit = (data: any) => {
+    const onSubmit = (data: any) => {
+
+        if (data.option === "Docente") {
+            var teacher = {
+                "firstName": data.firstName,
+                "lastName": data.lastName,
+                "email": data.email,
+                "password": data.password,
+                "cc": 239898
+            }
+
+            console.log(teacher);
+            TeacherService.createTeacher(teacher);
+            console.log("Docente registrado")
+        }
+      
+    console.log(data.firstName);
+    console.log(data.lastName);
     console.log(data.email);
     console.log(data.password);
+    console.log("opcion: "+data.option)
   };
   
 
@@ -33,10 +52,10 @@ const FormRegister: React.FunctionComponent = () => {
                     </Col>
                         
                     <Col>
-                    <Form.Control as="select" className="select" custom >
+                    <Form.Control as="select" name= "option" ref={register({ required: true })} className="select" custom >
                             <option disabled selected className="option"> Tipo de usuario </option>
-                            <option data-tokens="Docente"> Docente </option>
-                            <option data-tokens="Estudiante"> Estudiante</option>
+                            <option data-tokens="teacher"> Docente </option>
+                            <option data-tokens="student"> Estudiante</option>
                         </Form.Control>
                     </Col>               
                     </Row>
@@ -56,7 +75,7 @@ const FormRegister: React.FunctionComponent = () => {
                 <Row className="formulario">
                     <Col>
                         <Form.Group>
-                            <input type="text" name="LastName"   placeholder="Primer apellido" className="form-control"></input>
+                            <input type="text" name="lastName"  ref={register({ required: true })} placeholder="Primer apellido" className="form-control"></input>
                         </Form.Group>
                     </Col> 
                     <div className="col">
