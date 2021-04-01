@@ -1,39 +1,54 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom'
 import 'bootstrap-material-design'
 import 'jquery'
 import { useForm } from "react-hook-form";
 import { Col, Form, Row } from 'react-bootstrap';
-import TeacherService from '../Services/teacherService'
+import userService from '../Services/UserService';
 
-
-const FormRegister: React.FunctionComponent = () => {
+const FormRegister = () => {
     
+    const [ status, setStatus ] = useState("");
+    const { register, handleSubmit } = useForm();
+    const history = useHistory();
     
-  const { register, handleSubmit } = useForm();
+     useEffect(() => {
+         if (status === "success") { alert("Registro exitoso! Inicie sesion "); history.replace("/login")}
+     });
     
     
     const onSubmit = (data: any) => {
 
+        var user = {};
+        var type= "";
+
         if (data.option === "Docente") {
-            var teacher = {
+            type ="teacher"
+            user = {
                 "firstName": data.firstName,
                 "lastName": data.lastName,
                 "email": data.email,
                 "password": data.password,
-                "cc": 239898
+                "cc": data.cc
             }
-
-            console.log(teacher);
-            TeacherService.createTeacher(teacher);
-            console.log("Docente registrado")
+        } else if (data.option === "Estudiante") {
+            type = "student"
+            user = {
+                "firstName": data.firstName,
+                "lastName": data.lastName,
+                "email": data.email,
+                "password": data.password,
+                "semestre": 1 
+            }
         }
-      
-    console.log(data.firstName);
-    console.log(data.lastName);
-    console.log(data.email);
-    console.log(data.password);
-    console.log("opcion: "+data.option)
-  };
+        
+        userService.createUser(user, type).then(res => {
+            setStatus("success");
+        }).catch(err => {
+            setStatus("failed");
+        });
+        
+    }
   
 
   return (
@@ -80,7 +95,7 @@ const FormRegister: React.FunctionComponent = () => {
                     </Col> 
                     <div className="col">
                         <Form.Group>
-                            <input type="number" name="NumberDoc" placeholder="N de documento" className="form-control"></input>
+                            <input type="number" name="cc" ref={register({ required: true })} placeholder="N de documento" className="form-control"></input>
                         </Form.Group>
                     </div>               
                 </Row>
@@ -125,8 +140,11 @@ const FormRegister: React.FunctionComponent = () => {
                 <Row className="formulario">
                     <Col>
                         <button type="submit" className="btn btn-raised botonb1" id="registerButton">Registrarse</button>
-                    </Col>
-                </Row>
+                      </Col>
+
+                  </Row>
+                  {status==="success" && <Row className="formulario"> <Col> <p>Registrado</p></Col></Row> }
+                  {status==="failed" && <Row className="formulario"> <Col> <p>Error al registrar</p></Col></Row> }
             </Form>
         </Col>
     </Row>
