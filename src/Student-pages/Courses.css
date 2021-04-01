@@ -77,9 +77,31 @@
     box-shadow:none;
     margin: 0px;
 }
+.bToolbar:hover{
+    color: rgb(255, 255, 255);
+}
 #lToolbar{
     margin-top: -80px;
     height: 150px;
     padding-bottom: 0px;
     margin-bottom: 0px;
+}
+.botonLeccion{
+    background-color: #FFCC00;
+    color: black;
+    border-radius: 50px;
+    width: 100%;
+    margin: 0%;
+    padding: 5px;
+}
+.botonLeccion:hover{
+    background-color: #FFCC00;
+    color: black;
+}
+.task{
+    background-color: #669966;
+    color: white;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
 }
