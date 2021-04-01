@@ -3,16 +3,13 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import './Courses.css';
-import { Container, Row, Col } from 'react-bootstrap';
-import Header from '../Components/Header3';
+import {Row, Col } from 'react-bootstrap';
 import Card from '../Components/cardSubject';
 import NoteBoard from '../Components/NoteBoard';
 import Toolbar from '../Components/Toolbar';
 
 const Cursos : React.FC= () => {
   return (
-    <Container fluid>
-        <Header/>
         <Row>
           <Col md="3">
             <Toolbar/>
@@ -38,7 +35,6 @@ const Cursos : React.FC= () => {
             <NoteBoard/>
           </Col>
         </Row>
-    </Container>
     
   );
 }
