@@ -15,7 +15,7 @@ const Content: React.FC<ContainerProps> = ({ name }) => {
         (() => {
           switch (selected) {
             case 'Mis-grupos':
-              return(<Grupos/>)
+              return (<Grupos />)
            default:
              return (
              <Error/>
