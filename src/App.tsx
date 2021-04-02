@@ -18,7 +18,7 @@ function App() {
           <Route exact path="/" component={index}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register} />
-          <Route exact path="/Home/:TypeUser?" component={Home} />
+          <Route exact path="/Home" component={Home} />
           <Route exact path="/courses" component={Courses} />
           <Route exact path="/sociales" component={Sociales} />
         </BrowserRouter>        

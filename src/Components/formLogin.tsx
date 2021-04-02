@@ -6,9 +6,8 @@ import avatar from '../img/avatar.png'
 import LogoPassword from "../img/Group.png";
 import logoEmail from "../img/Group 12.png";
 import { useForm } from "react-hook-form";
-import { Col, Row, Spinner } from 'react-bootstrap';
+import { Col, Row, Spinner, Alert} from 'react-bootstrap';
 import UserService from '../Services/UserService'
-//import {AuthContext} from '../Private-routes/AuthContext'
 
 interface User {
   
@@ -31,7 +30,7 @@ const FormLogin = () => {
       if (userCurrent != null){
         user = JSON.parse(userCurrent);
         console.log(user.roles);        
-        history.replace("/home/"+user.roles);
+        history.replace("/home");
       }
     }
   });
@@ -121,7 +120,11 @@ const FormLogin = () => {
         </Row>
       </form>
 
-      {signed==="failed" &&(<Col className="formulario"> <Row> <Col><p> Error al registrarse, intente nuevamente</p> </Col> </Row></Col>)}
+      {signed === "failed" && (<Col className="formulario"> <Row>
+        <Col><Alert variant="danger"  onClose={() => setSigned("")} dismissible> Error al registrarse, intente nuevamente</Alert>
+        
+        </Col>
+      </Row></Col>)}
     </Row>
   );
 };
