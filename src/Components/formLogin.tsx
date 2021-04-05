@@ -30,7 +30,7 @@ const FormLogin = () => {
       if (userCurrent != null){
         user = JSON.parse(userCurrent);
         console.log(user.roles);        
-        history.replace("/page/grupos");
+        history.replace("/page/materias");
       }
     }
   });

@@ -21,18 +21,18 @@ const Cursos : React.FC= () => {
               </h1>
             </Row>
             <Row>
-                <Card titulo="Sociales" link="/sociales"/>
-                <Card titulo="Artistica" link="/artistica"/>
-                <Card titulo="Español" link="/español"/>
-                <Card titulo="Matematicas" link="/matematicas"/>
-                <Card titulo="Etica" link="/etica"/>
-                <Card titulo="ingles" link="/ingles"/>
-                <Card titulo="Naturales" link="/naturales"/>
-                <Card titulo="Informatica" link="/informatica"/>
+                <Card titulo="Sociales" link="materia/sociales"/>
+                <Card titulo="Artistica" link="materia/artistica"/>
+                <Card titulo="Español" link="materia/español"/>
+                <Card titulo="Matematicas" link="materia/matematicas"/>
+                <Card titulo="Etica" link="materia/etica"/>
+                <Card titulo="ingles" link="materia/ingles"/>
+                <Card titulo="Naturales" link="materia/naturales"/>
+                <Card titulo="Informatica" link="materia/informatica"/>
             </Row>
           </Col>
           <Col md="3">
-            <NoteBoard/>
+            <NoteBoard />
           </Col>
         </Row>
     
