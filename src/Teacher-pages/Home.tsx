@@ -1,5 +1,4 @@
-import React from "react";
-import { useHistory, Route} from 'react-router-dom'
+import { useHistory} from 'react-router-dom'
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
@@ -11,6 +10,7 @@ import Grupos from './Grupos'
 import Students from './Students'
 import Error from '../Pages/Error404'
 import Materias from '../Teacher-pages/Materias'
+import Materia from '../Student-pages/SingularCourse';
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router";
 
@@ -75,7 +75,19 @@ const Home = () => {
       {TypeUser === "student" && (
         <Container fluid>
           <Header />
-          <Cursos /> {/* Esto está estático */}
+          {
+            (() => {
+          switch (selected) {
+            case 'materias':
+              return (<Cursos/>)
+            case 'materia':
+              return (<Materia tipo={id}></Materia>) 
+            default:
+             return (
+             <Error/>
+            )
+          }
+        })()}
         </Container>
       )}
     </>

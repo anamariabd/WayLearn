@@ -3,7 +3,6 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import "./Styles/Navbar.css";
-import  { Link } from 'react-router-dom'
 import logo from "../img/Group 10.png";
 
 import { Navbar, Form, Row, Nav, Button, FormControl } from "react-bootstrap";
