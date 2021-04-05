@@ -1,15 +1,18 @@
 import React from "react";
-import {useHistory} from 'react-router-dom'
+import { useHistory, Route} from 'react-router-dom'
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import UserService from '../Services/UserService'
-import Content from "./Content";
-import Navbar from "./NavbarHome";
+import NavbarHome from "./NavbarHome";
 import Cursos from "../Student-pages/Cursos";
 import Header from "../Components/Header3";
+import Grupos from './Grupos'
+import Students from './Students'
+import Error from '../Pages/Error404'
+import Materias from '../Teacher-pages/Materias'
 import { Container } from "react-bootstrap";
-//import { useParams } from "react-router";
+import { useParams } from "react-router";
 
 interface User {
   
@@ -22,7 +25,8 @@ interface User {
 }
 
 const Home = () => {
- // const { TypeUser } = useParams<{ TypeUser: string }>();
+  const { name } = useParams<{ name: string }>();
+  const { id } = useParams<{ id: string }>();
   let userCurrent = UserService.getCurrentUser();
   let user: User;
   let history = useHistory();
@@ -32,17 +36,39 @@ const Home = () => {
     user = JSON.parse(userCurrent);
     TypeUser = user.roles;
   } else {
-    
     history.replace("/");
   }
 
-
+  console.log(name)
+  let selected = name;
   return (
     <> 
       {TypeUser === "teacher" && (
         <div>
-          <Navbar />
-          <Content name="Mis-grupos" /> {/* Esto está estático */}
+          <NavbarHome />
+          {
+        (() => {
+          switch (selected) {
+            case 'grupos':
+              return (<Grupos />)
+            case 'grupo':
+              return(<> 
+                <h1 className="subtitle"> <strong> Grupo {id} </strong></h1>
+                <Students/>
+              </>)
+              case 'lecciones':
+              return (<div>   <h1 className="subtitle"> <strong> Lecciones </strong></h1> </div>)
+            case 'perfil':
+              return (<>   <h1 className="subtitle"> <strong> Mi perfil </strong></h1>   
+              </>);
+              case 'materias':
+                return (<div>   <h1 className="subtitle"> <strong> Materias </strong></h1>  <Materias/> </div>);
+            default:
+             return (
+             <Error/>
+            )
+          }
+        })()}
         </div>
       )}
 

@@ -30,7 +30,7 @@ const FormLogin = () => {
       if (userCurrent != null){
         user = JSON.parse(userCurrent);
         console.log(user.roles);        
-        history.replace("/home");
+        history.replace("/page/grupos");
       }
     }
   });
@@ -121,7 +121,7 @@ const FormLogin = () => {
       </form>
 
       {signed === "failed" && (<Col className="formulario"> <Row>
-        <Col><Alert variant="danger"  onClose={() => setSigned("")} dismissible> Error al registrarse, intente nuevamente</Alert>
+        <Col><Alert variant="danger"  onClose={() => setSigned("")} dismissible> Error al iniciar sesion, intente nuevamente</Alert>
         
         </Col>
       </Row></Col>)}

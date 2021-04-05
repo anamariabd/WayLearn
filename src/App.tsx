@@ -3,8 +3,7 @@ import "./App.css";
 import 'bootstrap-material-design'
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { BrowserRouter, Route } from 'react-router-dom';
-//import {AuthRoute} from '../src/Private-routes/AuthRoute'
-import index from './Components/Index';
+import index from './Pages/Index';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Home from './Teacher-pages/Home';
@@ -18,7 +17,8 @@ function App() {
           <Route exact path="/" component={index}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register} />
-          <Route exact path="/Home" component={Home} />
+          <Route exact path="/page/:name/:id?" component={Home} /> {/* Esto es privado */ }
+          
           <Route exact path="/courses" component={Courses} />
           <Route exact path="/sociales" component={Sociales} />
         </BrowserRouter>        

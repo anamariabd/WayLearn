@@ -48,7 +48,7 @@ const Grupos = () => {
           <CardDeck>
             {MisGrupos.map((Grupo, index) => {
               return (
-                <Link to={"/home/" + Grupo.Number} key={index} className="course" >
+                <Link to={"grupo/"+Grupo.Number} key={index} className="course" >
                   <Card.Body>
                     <Card.Title className="cardtitle">{Grupo.Number}</Card.Title>
                     </Card.Body>

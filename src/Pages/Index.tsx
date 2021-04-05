@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from './Header';
-import IndexContent from './IndexContent'
-import Navbar from './Navbar'
+import Header from '../Components/Header';
+import IndexContent from '../Components/IndexContent'
+import Navbar from '../Components/Navbar'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import '../index.css';
-import Footer from './Footer';
+import Footer from '../Components/Footer';
 
 const Index: React.FC= () => {
   return (
