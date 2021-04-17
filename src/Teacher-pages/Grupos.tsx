@@ -1,58 +1,90 @@
-import React from "react";
-import  { Link } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
-import './Styles/Grupos.css'
-import { Col, Card, CardDeck } from "react-bootstrap";
+import "./Styles/Grupos.css";
+import UserService from "../Services/UserService";
+import { Col, Card, CardDeck, Button } from "react-bootstrap";
+
+interface User {
+  id: Number;
+  username: String;
+  roles: String;
+  accessToken: String;
+  tokenType: String;
+}
 
 interface Group {
   Number: string;
   Cantidad: string;
 }
 
-const MisGrupos: Group[] = [
+var listCursos: Group[] = [
   {
     Number: "1",
-    Cantidad: "29",
+    Cantidad: "30",
   },
   {
     Number: "2",
     Cantidad: "30",
   },
-  {
-    Number: "3",
-    Cantidad: "30",
-  },
-  {
-    Number: "4",
-    Cantidad: "30",
-  },
-  {
-    Number: "5",
-    Cantidad: "30",
-  },
-  {
-    Number: "6",
-    Cantidad: "30",
-  }
 ];
 
 const Grupos = () => {
+  const [listaCursos, setCursos] = useState<Group[]>([]);
+
+  useEffect(() => {
+    let user: User;
+    let userCurrent = UserService.getCurrentUser();
+
+    if (userCurrent != null) {
+      user = JSON.parse(userCurrent);
+      console.log(user.roles);
+    }
+  });
+
+  const CrearCurso = () => {
+    let num: any = listCursos.length + 1;
+
+    listCursos.push({ Number: String(num), Cantidad: "12" });
+    setCursos([...listCursos]);
+    console.log(listaCursos);
+  };
 
   return (
     <>
       <Col>
-        <h1 className="subtitle"> <strong> Mis Cursos </strong></h1>
-        <Col  className="container">
+        <h1 className="subtitle">
+          {" "}
+          <strong> Mis Cursos </strong>
+        </h1>
+        <Col>
+          <button
+            onClick={() => {
+              CrearCurso();
+            }}
+            className="btn btn-raised botonb1"
+          >
+            Crear grupo
+          </button>
+        </Col>
+
+        <Col className="container">
           <CardDeck>
-            {MisGrupos.map((Grupo, index) => {
+            {listCursos.map((Grupo, index) => {
               return (
-                <Link to={"grupo/"+Grupo.Number} key={index} className="course" >
+                <Link
+                  to={"grupo/" + Grupo.Number}
+                  key={index}
+                  className="course"
+                >
                   <Card.Body>
-                    <Card.Title className="cardtitle">{Grupo.Number}</Card.Title>
-                    </Card.Body>
-             </Link> 
+                    <Card.Title className="cardtitle">
+                      {Grupo.Number}
+                    </Card.Title>
+                  </Card.Body>
+                </Link>
               );
             })}
           </CardDeck>

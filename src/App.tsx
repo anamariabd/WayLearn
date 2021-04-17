@@ -18,9 +18,7 @@ function App() {
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register} />
           <Route exact path="/page/:name/:id?" component={Home} /> {/* Esto es privado */ }
-          
           <Route exact path="/courses" component={Courses} />
-          
         </BrowserRouter>        
     </div>
   );
