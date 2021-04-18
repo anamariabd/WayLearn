@@ -8,16 +8,7 @@ import logoEmail from "../img/Group 12.png";
 import { useForm } from "react-hook-form";
 import { Col, Row, Spinner, Alert} from 'react-bootstrap';
 import UserService from '../Services/UserService'
-
-interface User {
-  
-  id: Number,
-  username: String,
-  roles: String,
-  accessToken: String,
-  tokenType: String
-
-}
+import {User} from "../Interfaces"
 
 const FormLogin = () => {
   

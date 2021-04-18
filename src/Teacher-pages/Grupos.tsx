@@ -1,62 +1,55 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import "./Styles/Grupos.css";
 import UserService from "../Services/UserService";
-import { Col, Card, CardDeck, Button } from "react-bootstrap";
+import CourseService from "../Services/CourseService";
+import { Col, Card, CardDeck } from "react-bootstrap";
+import { User, Group, CreateGroup } from "../Interfaces";
 
-interface User {
-  id: Number;
-  username: String;
-  roles: String;
-  accessToken: String;
-  tokenType: String;
-}
-
-interface Group {
-  Number: string;
-  Cantidad: string;
-}
-
-var listCursos: Group[] = [
-  {
-    Number: "1",
-    Cantidad: "30",
-  },
-  {
-    Number: "2",
-    Cantidad: "30",
-  },
-];
+var listCursos: Group[] = [];
 
 const Grupos = () => {
   const [listaCursos, setCursos] = useState<Group[]>([]);
+  
+  let user: User;
+  let userCurrent = UserService.getCurrentUser();
+  let Id: any;
+
+  if (userCurrent != null) {
+    user = JSON.parse(userCurrent);
+    Id = user.id;
+  }
 
   useEffect(() => {
-    let user: User;
-    let userCurrent = UserService.getCurrentUser();
+    
+      CourseService.GetCourses(Id)
+        .then((e: any) => {
+          setCursos(e.data);
+          })
+        .catch((error) => {
+          console.log(error);
+        });
 
-    if (userCurrent != null) {
-      user = JSON.parse(userCurrent);
-      console.log(user.roles);
-    }
-  });
+   }, []);
 
   const CrearCurso = () => {
-    let num: any = listCursos.length + 1;
+    let num: any = listaCursos.length + 1;
+    let curso: CreateGroup = {
+      idTeacher: Number(Id),
+      grupo: { number: String(num), amount: 30 },
+    };
 
-    listCursos.push({ Number: String(num), Cantidad: "12" });
-    setCursos([...listCursos]);
-    console.log(listaCursos);
+    CourseService.createCourse(curso);
+    // setCursos([...listCursos]);
   };
 
   return (
     <>
       <Col>
         <h1 className="subtitle">
-          {" "}
           <strong> Mis Cursos </strong>
         </h1>
         <Col>
@@ -72,16 +65,16 @@ const Grupos = () => {
 
         <Col className="container">
           <CardDeck>
-            {listCursos.map((Grupo, index) => {
+            {listaCursos.map((Grupo, index) => {
               return (
                 <Link
-                  to={"grupo/" + Grupo.Number}
+                  to={"grupo/" + Grupo.number}
                   key={index}
                   className="course"
                 >
                   <Card.Body>
                     <Card.Title className="cardtitle">
-                      {Grupo.Number}
+                      {Grupo.number}
                     </Card.Title>
                   </Card.Body>
                 </Link>
