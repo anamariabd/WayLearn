@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const USER_API_BASE_URL = "http://localhost:8080/api/v1/";
-const AUTH_API_BASE_URL = "http://localhost:8080/api/auth/login";
+const AUTH_API_BASE_URL = "http://localhost:8080/api/v1/auth/login";
 
 class UserService {
   createUser(user: any, Type:string) {

@@ -3,26 +3,20 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import UserService from '../Services/UserService'
-import NavbarHome from "./NavbarHome";
 import Cursos from "../Student-pages/Cursos";
-import Header from "../Components/Header3";
-import Grupos from './Grupos'
-import Students from './Students'
-import Error from '../Pages/Error404'
-import Materias from '../Teacher-pages/Materias'
 import Materia from '../Student-pages/SingularCourse';
+import Header from "../Components/Header3";
+
+import MiPerfil from '../Components/MiPerfil'
+import Grupos from '../Teacher-pages/Grupos'
+import Students from '../Teacher-pages/Students'
+import Materias from '../Teacher-pages/Materias'
+import NavbarHome from "../Teacher-pages/NavbarHome";
+
+import Error from './Error404'
+import {User} from '../Interfaces'
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router";
-
-interface User {
-  
-  id: Number,
-  username: String,
-  roles: String,
-  accessToken: String,
-  tokenType: String
-
-}
 
 const Home = () => {
   const { name } = useParams<{ name: string }>();
@@ -59,7 +53,8 @@ const Home = () => {
               case 'lecciones':
               return (<div>   <h1 className="subtitle"> <strong> Lecciones </strong></h1> </div>)
             case 'perfil':
-              return (<>   <h1 className="subtitle"> <strong> Mi perfil </strong></h1>   
+              return (<>  
+                     <MiPerfil/>
               </>);
               case 'materias':
                 return (<div>   <h1 className="subtitle"> <strong> Materias </strong></h1>  <Materias/> </div>);
@@ -81,7 +76,9 @@ const Home = () => {
             case 'materias':
               return (<Cursos/>)
             case 'materia':
-              return (<Materia tipo={id}></Materia>) 
+              return (<Materia tipo={id}></Materia>)
+            case 'perfil':
+              return( <MiPerfil/> )
             default:
              return (
              <Error/>

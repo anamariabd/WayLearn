@@ -65,7 +65,6 @@ const FormRegister = () => {
                             />
                         </Form.Group>
                     </Col>
-                        
                     <Col>
                     <Form.Control as="select" name= "option" ref={register({ required: true })} className="select" custom >
                             <option disabled selected className="option"> Tipo de usuario </option>
