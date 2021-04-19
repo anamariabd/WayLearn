@@ -8,13 +8,14 @@ import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Home from './Teacher-pages/Home';
 import Courses from './Student-pages/Cursos';
-
+import Student from './Teacher-pages/student';
 
 function App() {
   return (
     <div className="App">
         <BrowserRouter>
           <Route exact path="/" component={index}/>
+          <Route exact path="/student" component={Student}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register} />
           <Route exact path="/page/:name/:id?" component={Home} /> {/* Esto es privado */ }

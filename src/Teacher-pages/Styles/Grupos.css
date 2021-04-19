@@ -43,6 +43,10 @@ div .card-title{
     align-items: center;
 }
 
+.a-student{
+    color: #943966;
+}
+
 @media screen and (max-width: 992px) {
  
     .card-deck .course{

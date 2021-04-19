@@ -65,7 +65,7 @@ const Students = () => {
               i++;
               return (
                 <>
-                  <h3><strong>{i + '. ' + student.Nombre + " " + student.Apellido}</strong></h3>
+                  <h3><strong><a className="a-student" href="/student">{i + '. ' + student.Nombre + " " + student.Apellido}</a></strong></h3>
                   
                 </>
               );
