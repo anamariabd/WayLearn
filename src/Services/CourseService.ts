@@ -22,6 +22,13 @@ class CourseService{
     });
   }
 
+  AddStudent(Id:Number) {
+    return axios.put(USER_API_BASE_URL + "/addStudent", Id, {
+      headers: {
+        "Content-Type": "application/json",
+      }
+    });
+  }
 
 }
 

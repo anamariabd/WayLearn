@@ -22,12 +22,10 @@
   font-family: ABeeZee;
   font-size: x-large;
   margin: 1px;
-  padding-left: 5px;
   position: relative;
 }
 
 .sidebar{
-    
     margin: 0;
     padding: 0;
     width: 18%;
@@ -41,14 +39,13 @@
     margin-left: -250px;
 }
 
-
 #logo{
   height: 40px;
   width: 40px;
   margin-left: 0px;
+  margin-right: 0px;
   margin-top: 0px;
 }
-
 
 @media (max-width: 572px) {
 

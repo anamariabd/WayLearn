@@ -5,7 +5,7 @@ import "mdbreact/dist/css/mdb.css";
 import "./Styles/Navbar.css";
 import logo from "../img/Group 10.png";
 
-import { Navbar, Form, Row, Nav, Button, FormControl } from "react-bootstrap";
+import { Navbar, Form, Row, Col, Nav, Button, FormControl } from "react-bootstrap";
 
 const NavbarHome: React.FC = () => {
   return (
@@ -13,12 +13,15 @@ const NavbarHome: React.FC = () => {
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="#home">
           <Row>
-            <img id="logo" src={logo} alt="logo" />
-            
-           <p id="txt-logo"> WayLearn</p>
+            <Col xs={3}>
+            <img id="logo" src={logo} alt="logo" />         
+            </Col>
+            <Col>   
+              <p id="txt-logo"> WayLearn</p>
+            </Col>
           </Row>
         </Navbar.Brand>
-        <Nav className="mr-auto">  
+        <Nav className="mr-auto" >  
           <Nav.Link href = "/page/perfil">  Mi perfil  </Nav.Link>
           <Nav.Link href = "/page/lecciones">  Lecciones  </Nav.Link>
           <Nav.Link href="/page/grupos">Mis cursos</Nav.Link>
