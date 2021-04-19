@@ -6,13 +6,17 @@ import "mdbreact/dist/css/mdb.css";
 import "./Styles/Grupos.css";
 import UserService from "../Services/UserService";
 import CourseService from "../Services/CourseService";
-import { Col, Card, Row, CardDeck } from "react-bootstrap";
+import { Col, Card, Row, CardDeck, Modal, Button } from "react-bootstrap";
 import { User, Group, CreateGroup } from "../Interfaces";
 
 var listCursos: Group[] = [];
 
 const Grupos = () => {
   const [listaCursos, setCursos] = useState<Group[]>([]);
+  const [show, setShow] = useState(false);
+  
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   
   let user: User;
   let userCurrent = UserService.getCurrentUser();
@@ -28,10 +32,12 @@ const Grupos = () => {
     CourseService.GetCourses(Id)
       .then((e: any) => {
         setCursos(e.data);
+    
       })
       .catch((error) => {
         console.log(error);
       });
+    
    }, []);
 
   const CrearCurso = () => {
@@ -40,8 +46,8 @@ const Grupos = () => {
       idTeacher: Number(Id),
       grupo: { number: String(num), amount: 30 },
     };
-
     CourseService.createCourse(curso);
+    handleShow();
     // setCursos([...listCursos]);
   };
 
@@ -84,6 +90,23 @@ const Grupos = () => {
           </CardDeck>
         </Col>
       </Col>
+      <Modal show={show} onHide={handleClose}>
+        
+  <Modal.Dialog>
+  <Modal.Header closeButton>
+    <Modal.Title>Modal title</Modal.Title>
+  </Modal.Header>
+
+  <Modal.Body>
+    <p>Modal body text goes here.</p>
+  </Modal.Body>
+
+  <Modal.Footer>
+    <Button variant="secondary">Cancelar</Button>
+    <Button variant="primary">Save changes</Button>
+  </Modal.Footer>
+</Modal.Dialog>
+</Modal>
     </>
   );
 };
