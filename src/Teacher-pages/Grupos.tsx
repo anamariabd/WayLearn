@@ -1,19 +1,24 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import "./Styles/Grupos.css";
 import UserService from "../Services/UserService";
 import CourseService from "../Services/CourseService";
-import { Col, Card, Row, CardDeck } from "react-bootstrap";
+import { Col, Card, Row, CardDeck, Modal } from "react-bootstrap";
 import { User, Group, CreateGroup } from "../Interfaces";
 
 var listCursos: Group[] = [];
 
 const Grupos = () => {
+
   const [listaCursos, setCursos] = useState<Group[]>([]);
-  
+  const [tam, setTam] = useState();
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   let user: User;
   let userCurrent = UserService.getCurrentUser();
   let Id: any;
@@ -23,26 +28,39 @@ const Grupos = () => {
     Id = user.id;
   }
 
-  useEffect(() => {
+  const CargarCursos = () => {
 
     CourseService.GetCourses(Id)
-      .then((e: any) => {
-        setCursos(e.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-   }, []);
+    .then((e: any) => {
+      setCursos(e.data);
+      setTam(e.data.length)
+      console.log(tam);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+    
+  }
+
+  useEffect(() => {
+    CargarCursos();
+  }, []);
 
   const CrearCurso = () => {
-    let num: any = listaCursos.length + 1;
+    
+    handleClose();
+    let num: any = Number(tam)+1;
     let curso: CreateGroup = {
       idTeacher: Number(Id),
       grupo: { number: String(num), amount: 30 },
     };
 
-    CourseService.createCourse(curso);
-    // setCursos([...listCursos]);
+    CourseService.createCourse(curso).then( res => {
+      console.log("curso creado");
+    });
+
+    
+    CargarCursos();
   };
 
   return (
@@ -53,14 +71,14 @@ const Grupos = () => {
         </h1>
         <Row>
           <Col>
-           <button
-            onClick={() => {
-              CrearCurso();
-            }}
-            className="btn btn-raised botonb1"
-          >
-            Crear grupo
-          </button> 
+            <button
+              onClick={() => {
+                handleShow();
+              }}
+              className="btn" id="bis2"
+            >
+              Crear grupo
+            </button>
           </Col>
         </Row>
 
@@ -84,6 +102,40 @@ const Grupos = () => {
           </CardDeck>
         </Col>
       </Col>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Crear un nuevo curso</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <p>Estás seguro de crear un nuevo grupo?</p>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Col>
+            <button
+              onClick={() => {
+                handleClose();
+              }}
+              className="btn"
+              id="bis"
+            >
+              Cancelar
+            </button>{" "}
+          </Col>
+          <Col>
+            <button
+              onClick={() => {
+                CrearCurso();
+              }}
+              className="btn"
+              id="bis"
+            >
+              Aceptar
+            </button>
+          </Col>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };
