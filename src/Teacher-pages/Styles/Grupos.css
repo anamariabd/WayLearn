@@ -43,6 +43,17 @@ div .card-title{
     align-items: center;
 }
 
+#bis2{
+  background-color: #993366 ;
+  color: white;
+  border-radius: 50px;
+  margin-left:75%;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 @media screen and (max-width: 992px) {
  
     .card-deck .course{

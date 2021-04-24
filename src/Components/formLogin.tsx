@@ -27,7 +27,6 @@ const FormLogin = () => {
   });
 
   const { register, handleSubmit } = useForm();
- // const { setUserInfo } = React.useContext(AuthContext);
   const [signed, setSigned] = useState("");
   const [loading, setLoading] = useState(false);
   let history = useHistory();

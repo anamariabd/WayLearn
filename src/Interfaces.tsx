@@ -19,3 +19,9 @@ export interface CreateGroup{
     idTeacher:Number,
     grupo: Group
 }
+
+export interface Estudiante {
+  Nombre: string;
+  Apellido: string;
+  Id: String;
+}

@@ -1,6 +1,4 @@
 import { useHistory} from 'react-router-dom'
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import UserService from '../Services/UserService'
 import Cursos from "../Student-pages/Cursos";
@@ -12,6 +10,7 @@ import Grupos from '../Teacher-pages/Grupos'
 import Students from '../Teacher-pages/Students'
 import Materias from '../Teacher-pages/Materias'
 import NavbarHome from "../Teacher-pages/NavbarHome";
+import Student from '../Teacher-pages/Student'
 
 import Error from './Error404'
 import {User} from '../Interfaces'
@@ -50,8 +49,10 @@ const Home = () => {
                 <h1 className="subtitle"> <strong> Grupo {id} </strong></h1>
                 <Students/>
               </>)
-              case 'lecciones':
+            case 'lecciones':
               return (<div>   <h1 className="subtitle"> <strong> Lecciones </strong></h1> </div>)
+            case 'student':
+              return (<Student/>);
             case 'perfil':
               return (<>  
                      <MiPerfil/>
