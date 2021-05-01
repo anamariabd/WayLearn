@@ -43,7 +43,29 @@ const Grupos = () => {
   }
 
   useEffect(() => {
-    CargarCursos();
+    
+  let user: User;
+  let userCurrent = UserService.getCurrentUser();
+  let Id: any;
+
+  if (userCurrent != null) {
+    user = JSON.parse(userCurrent);
+    Id = user.id;
+  }
+
+
+
+    CourseService.GetCourses(Id)
+    .then((e: any) => {
+      setCursos(e.data);
+      setTam(e.data.length)
+      console.log(tam);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+    
+  
   }, []);
 
   const CrearCurso = () => {

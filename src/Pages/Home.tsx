@@ -55,7 +55,7 @@ const Home = () => {
               return (<Student/>);
             case 'perfil':
               return (<>  
-                     <MiPerfil/>
+                <MiPerfil role={TypeUser} name="Docente"/>
               </>);
               case 'materias':
                 return (<div>   <h1 className="subtitle"> <strong> Materias </strong></h1>  <Materias/> </div>);
@@ -79,7 +79,7 @@ const Home = () => {
             case 'materia':
               return (<Materia tipo={id}></Materia>)
             case 'perfil':
-              return( <MiPerfil/> )
+              return( <MiPerfil role={TypeUser} name="Estudiante"/> )
             default:
              return (
              <Error/>

@@ -81,9 +81,13 @@ const FormRegister = () => {
                         </Form.Group>
                     </Col> 
                     <Col>
-                        <Form.Group>
-                            <input type="text"  name="TypeDoc"  placeholder="Tipo de documento" className="form-control"></input>
-                        </Form.Group>
+
+                      <Form.Control as="select" name="TypeDoc" ref={register({ required: true })} className="select" custom >
+                        <option disabled selected className="option"> Tipo de documento de identidad</option>
+                        <option data-tokens="cc"> c.c. </option>
+                        <option data-tokens="ti"> T.I.</option>
+                        <option data-tokens="extranjera"> c.c. extranjería</option>
+                      </Form.Control>
                     </Col>               
                 </Row>
                 <Row className="formulario">
@@ -113,7 +117,7 @@ const FormRegister = () => {
                 <Row className="formulario">
                     <Col>
                         <Form.Group>
-                            <input type="text" 
+                            <input type="email" 
                         ref={register({ required: true })} placeholder="Email" name="email" className="form-control"></input>
                         </Form.Group>
                     </Col> 

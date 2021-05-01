@@ -6,6 +6,13 @@ export interface User {
   tokenType: String;
 }
 
+export interface profile{
+  id: Number,
+  firstName: String,
+  lastName: String,
+  email: String
+}
+
 export interface Group{
   id?: Number;
   number: String;

@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react";
-import {useHistory} from 'react-router-dom'
-import "bootstrap-material-design";
-import "jquery";
+import { useState, useEffect } from "react";
+import { useHistory } from 'react-router-dom';
 import avatar from '../img/avatar.png'
 import LogoPassword from "../img/Group.png";
 import logoEmail from "../img/Group 12.png";
 import { useForm } from "react-hook-form";
 import { Col, Row, Spinner, Alert} from 'react-bootstrap';
-import UserService from '../Services/UserService'
-import {User} from "../Interfaces"
+import UserService from '../Services/UserService';
+import { User } from "../Interfaces";
 
 const FormLogin = () => {
   
