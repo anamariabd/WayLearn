@@ -32,7 +32,6 @@ const Home = () => {
     history.replace("/");
   }
 
-  console.log(name)
   let selected = name;
   return (
     <> 
@@ -46,7 +45,6 @@ const Home = () => {
               return (<Grupos />)
             case 'grupo':
               return(<> 
-                <h1 className="subtitle"> <strong> Grupo {id} </strong></h1>
                 <Students/>
               </>)
             case 'lecciones':
@@ -55,7 +53,7 @@ const Home = () => {
               return (<Student/>);
             case 'perfil':
               return (<>  
-                     <MiPerfil/>
+                <MiPerfil role={TypeUser} name="Docente"/>
               </>);
               case 'materias':
                 return (<div>   <h1 className="subtitle"> <strong> Materias </strong></h1>  <Materias/> </div>);
@@ -79,7 +77,7 @@ const Home = () => {
             case 'materia':
               return (<Materia tipo={id}></Materia>)
             case 'perfil':
-              return( <MiPerfil/> )
+              return( <MiPerfil role={TypeUser} name="Estudiante"/> )
             default:
              return (
              <Error/>

@@ -1,29 +1,30 @@
 import axios from "axios";
 import {CreateGroup} from '../Interfaces'
 
-const USER_API_BASE_URL = "http://localhost:8080/api/v1/group";
+const GROUP_API_BASE_URL = "http://localhost:8080/api/v1/group";
 
 class CourseService{
 
   createCourse(Course: CreateGroup) {
     
-    return axios.post(USER_API_BASE_URL+"/register", Course, {
+    return axios.post(GROUP_API_BASE_URL+"/register", Course, {
       headers: {
         "Content-Type": "application/json",
       }
     })
   }
 
- async GetCourses(Id:Number) {
-    return await axios.get(USER_API_BASE_URL + "/teacher/"+Id, {
+ async getCourses(Id:Number) {
+    return await axios.get(GROUP_API_BASE_URL + "/teacher/"+Id, {
       headers: {
         "Content-Type": "application/json",
       }
     });
   }
 
-  AddStudent(Id:Number) {
-    return axios.put(USER_API_BASE_URL + "/addStudent", Id, {
+  
+  async getStudentsByGroup(id:string) {
+    return await axios.get(GROUP_API_BASE_URL + "/student/" + id, {
       headers: {
         "Content-Type": "application/json",
       }

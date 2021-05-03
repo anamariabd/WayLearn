@@ -1,50 +1,41 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom'
-import 'bootstrap-material-design'
-import 'jquery'
 import { useForm } from "react-hook-form";
-import { Col, Form, Row } from 'react-bootstrap';
+import { Col, Form, Row, Alert, Spinner } from 'react-bootstrap';
 import userService from '../Services/UserService';
 
 const FormRegister = () => {
     
     const [ status, setStatus ] = useState("");
     const { register, handleSubmit } = useForm();
+    const [loading, setLoading] = useState(false);
     const history = useHistory();
     
      useEffect(() => {
-         if (status === "success") { alert("Registro exitoso! Inicie sesion "); history.replace("/login")}
+         if (status === "success") {
+             alert("Registro exitoso! Inicie sesion ");
+             history.replace("/login")
+         }
      });
     
     
     const onSubmit = (data: any) => {
 
-        var user = {};
-        var type= "";
+        setLoading(true);
 
-        if (data.option === "Docente") {
-            type ="teacher"
-            user = {
-                "firstName": data.firstName,
-                "lastName": data.lastName,
-                "email": data.email,
-                "password": data.password,
-                "cc": data.cc
-            }
-        } else if (data.option === "Estudiante") {
-            type = "student"
-            user = {
-                "firstName": data.firstName,
-                "lastName": data.lastName,
-                "email": data.email,
-                "password": data.password,
-                "semestre": 1 
-            }
-        }
+        var type = data.option === "Docente"? "teacher": data.option === "Estudiante"?"student":"undefined"
         
+        var user = {
+            "firstName": data.firstName,
+            "lastName": data.lastName,
+            "email": data.email,
+            "password": data.password,
+            "cc": data.cc
+        }
         userService.createUser(user, type).then(res => {
             setStatus("success");
         }).catch(err => {
+            setLoading(false);
             setStatus("failed");
         });
         
@@ -81,9 +72,13 @@ const FormRegister = () => {
                         </Form.Group>
                     </Col> 
                     <Col>
-                        <Form.Group>
-                            <input type="text"  name="TypeDoc"  placeholder="Tipo de documento" className="form-control"></input>
-                        </Form.Group>
+
+                      <Form.Control as="select" name="TypeDoc" ref={register({ required: true })} className="select" custom >
+                        <option disabled selected className="option"> Tipo de documento de identidad</option>
+                        <option data-tokens="cc"> c.c. </option>
+                        <option data-tokens="ti"> T.I.</option>
+                        <option data-tokens="extranjera"> c.c. extranjería</option>
+                      </Form.Control>
                     </Col>               
                 </Row>
                 <Row className="formulario">
@@ -113,7 +108,7 @@ const FormRegister = () => {
                 <Row className="formulario">
                     <Col>
                         <Form.Group>
-                            <input type="text" 
+                            <input type="email" 
                         ref={register({ required: true })} placeholder="Email" name="email" className="form-control"></input>
                         </Form.Group>
                     </Col> 
@@ -135,15 +130,23 @@ const FormRegister = () => {
                             <input type="password" placeholder="Confirmar Contraseña" name="ConfirmPass"  className="form-control"></input>
                         </Form.Group>
                     </Col>               
-                </Row>
+                  </Row>
+                  
+        {loading &&(<Row className="formulario"><Col><Spinner animation="border" variant="warning" /> </Col> </Row>)}
                 <Row className="formulario">
                     <Col>
-                        <button type="submit" className="btn btn-raised botonb1" id="registerButton">Registrarse</button>
+                        <button type="submit" className="btn btn-raised botonb1" id="registerButton" 
+              disabled={loading}>Registrarse</button>
                       </Col>
 
                   </Row>
-                  {status==="success" && <Row className="formulario"> <Col> <p>Registrado</p></Col></Row> }
-                  {status==="failed" && <Row className="formulario"> <Col> <p>Error al registrar</p></Col></Row> }
+                  {status === "failed" && (<Col className="formulario">
+                      <Row>
+        <Col><Alert variant="danger"  onClose={() => setStatus("")} dismissible> Error al registrar, intente nuevamente</Alert>
+                  
+        </Col>
+      </Row></Col>)}
+                          
             </Form>
         </Col>
     </Row>

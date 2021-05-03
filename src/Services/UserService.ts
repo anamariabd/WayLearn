@@ -28,6 +28,10 @@ class UserService {
     });
     
   }
+  
+  getProfile(type:String, id:String) {
+    return axios.get(USER_API_BASE_URL+type+"/"+id)
+  }
 
   showUser(Type:string) {
     return axios.get(USER_API_BASE_URL+Type+"/gets")

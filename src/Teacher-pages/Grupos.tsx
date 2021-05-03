@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext} from "react";
 import { Link } from "react-router-dom";
-import "@fortawesome/fontawesome-free/css/all.min.css";
 import "mdbreact/dist/css/mdb.css";
 import "./Styles/Grupos.css";
 import UserService from "../Services/UserService";
@@ -8,10 +7,9 @@ import CourseService from "../Services/CourseService";
 import { Col, Card, Row, CardDeck, Modal } from "react-bootstrap";
 import { User, Group, CreateGroup } from "../Interfaces";
 
-var listCursos: Group[] = [];
-
 const Grupos = () => {
 
+ // const courseContext = useContext(CourseContext);
   const [listaCursos, setCursos] = useState<Group[]>([]);
   const [tam, setTam] = useState();
   const [show, setShow] = useState(false);
@@ -28,26 +26,30 @@ const Grupos = () => {
     Id = user.id;
   }
 
-  const CargarCursos = () => {
+  useEffect(() => {
+    
+  let user: User;
+  let userCurrent = UserService.getCurrentUser();
+  let Id: any;
 
-    CourseService.GetCourses(Id)
+  if (userCurrent != null) {
+    user = JSON.parse(userCurrent);
+    Id = user.id;
+    
+    CourseService.getCourses(Id)
     .then((e: any) => {
       setCursos(e.data);
-      setTam(e.data.length)
-      console.log(tam);
+      setTam(e.data.length);
+
     })
-    .catch((error) => {
+    .catch((error:any) => {
       console.log(error);
     });
-    
-  }
 
-  useEffect(() => {
-    CargarCursos();
+  }
   }, []);
 
   const CrearCurso = () => {
-    
     handleClose();
     let num: any = Number(tam)+1;
     let curso: CreateGroup = {
@@ -56,11 +58,10 @@ const Grupos = () => {
     };
 
     CourseService.createCourse(curso).then( res => {
-      console.log("curso creado");
-    });
-
+      console.log(res.data);
     
-    CargarCursos();
+    setCursos(listaCursos.concat(res.data));
+    });
   };
 
   return (
@@ -87,9 +88,10 @@ const Grupos = () => {
             {listaCursos.map((Grupo, index) => {
               return (
                 <Link
-                  to={"grupo/" + Grupo.number}
-                  key={index}
+                  to={"grupo/"+Grupo.id}
+                  key={Grupo.id}
                   className="course"
+                  onClick={() => console.log(Grupo.id)}
                 >
                   <Card.Body>
                     <Card.Title className="cardtitle">
