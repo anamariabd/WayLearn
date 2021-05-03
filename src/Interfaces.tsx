@@ -14,12 +14,17 @@ export interface profile{
 }
 
 export interface Group{
-  id?: Number;
+  id?: number|null;
   number: String;
   amount: Number;
   teacher?: String;
   subjects?: String;
   listStudent?: String;
+}
+
+export interface course{
+  IdCourse: string|null,
+  selected: string|null
 }
 
 export interface CreateGroup{
@@ -28,7 +33,9 @@ export interface CreateGroup{
 }
 
 export interface Estudiante {
-  Nombre: string;
-  Apellido: string;
-  Id: String;
+  firstName: string,
+  lastName: string,
+  email?: String,
+  cc?: String,
+  id: String;
 }

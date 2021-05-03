@@ -32,7 +32,6 @@ const Home = () => {
     history.replace("/");
   }
 
-  console.log(name)
   let selected = name;
   return (
     <> 
@@ -46,7 +45,6 @@ const Home = () => {
               return (<Grupos />)
             case 'grupo':
               return(<> 
-                <h1 className="subtitle"> <strong> Grupo {id} </strong></h1>
                 <Students/>
               </>)
             case 'lecciones':
