@@ -37,5 +37,5 @@ export interface Estudiante {
   lastName: string,
   email?: String,
   cc?: String,
-  id: String;
+  id: String|number;
 }

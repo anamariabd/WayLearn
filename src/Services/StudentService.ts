@@ -14,11 +14,11 @@ class StudentService{
       headers: {
         "Content-Type": "application/json",
       }
-    }).then(
-      (e:any) => console.log("Estudiante agregado")
-    ).catch(
-      (e:any) => console.log("Error")
-    );
+    });
+  }
+
+  async getStudentByid(id:string) {
+    return await axios.get(STUDENT_API_BASE_URL + id);
   }
 
 }
