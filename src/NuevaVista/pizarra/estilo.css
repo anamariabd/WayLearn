@@ -1,0 +1,21 @@
+.tituloNotas{
+    color: white;
+    text-align: center;
+    background-color: #669966;
+    border-radius: 50px;
+    padding-top: 5px;
+    margin :10px;
+    margin-bottom: 0px;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0);
+    position: relative;
+    z-index: 1;
+}
+.notas{
+    background-color: white;
+    box-shadow: 1px 1px 5px rgb(138, 137, 137);
+    color: #996699;
+    margin :15px;
+    margin-top: 0px;
+    padding-top: 10px;
+    
+}

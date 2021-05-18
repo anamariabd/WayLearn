@@ -1,0 +1,19 @@
+.filaHeader3{
+    background-color: #333333;
+    align-items: center;
+    
+}
+.logoBarra3{
+    margin: 10px;
+    height: 50px;
+}
+.cBarraBusqueda{
+    text-align: center;
+}
+.barraBusqueda{
+    border-radius: 50px;
+    padding: 10px;
+    width: 500px;
+    height: 35px;
+    
+}
