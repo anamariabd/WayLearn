@@ -12,14 +12,14 @@ const Header: React.FC<{titulo:string}> = ({titulo}) => {
             <img id="imglogo1" src={logo} alt = "logo"/>
           </Row>
           <Row id="barra1">
-            <div className="col-9">
+            <Col xs={9}>
               <p id="txtLogo">{titulo}</p>
-            </div>
-              <div className="col-3" id="botonera1">
+            </Col>
+              <Col xs={3} id="botonera1">
                 
                 <a type="button" href="/login" className="btn" id="bis">Iniciar sesion</a>
                 <a type="button" href="/register" className="btn" id="br">Registrarse</a>
-              </div>
+              </Col>
           </Row>
         </Col>
     </Row>

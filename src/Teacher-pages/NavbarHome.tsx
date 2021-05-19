@@ -1,19 +1,17 @@
 import React from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import "./Styles/Navbar.css";
 import logo from "../img/Group 10.png";
-import { PersonCircle, Search } from "react-bootstrap-icons";
-
+import ProfileMenu from "../Components/ProfileMenu"
+import { Search } from "react-bootstrap-icons";
 import {
   Navbar,
   Row,
   Col,
   Nav,
   InputGroup,
-  FormControl,
-  Dropdown
+  FormControl
 } from "react-bootstrap";
 
 const NavbarHome: React.FC = () => {
@@ -48,19 +46,7 @@ const NavbarHome: React.FC = () => {
             </InputGroup>
           </Col>
         </Row>
-        <Row className="lg">
-          <Col>
-            <Dropdown>
-              <Dropdown.Toggle id = "profile">
-                <PersonCircle color="white" size={38} />
-              </Dropdown.Toggle>
-              <Dropdown.Menu alignRight={true} id="profile-menu">
-                <Dropdown.Item href="#/action-1">Mi perfil</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Cerrar sesión</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Col>
-        </Row>
+        <ProfileMenu/>
       </Navbar>
     </>
   );

@@ -1,12 +1,11 @@
 import React from 'react';
-import 'bootstrap-material-design'
-import 'jquery'
+import {Row} from 'react-bootstrap';
 
 const Footer: React.FC= () => {
   return (
-    <div className="row" id="footer">
-            
-    </div>
+    <Row id="footer">
+            contact us
+    </Row>
   );
 }
 

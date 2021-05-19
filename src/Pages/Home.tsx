@@ -3,7 +3,7 @@ import "mdbreact/dist/css/mdb.css";
 import UserService from '../Services/UserService'
 import Cursos from "../Student-pages/Cursos";
 import Materia from '../Student-pages/SingularCourse';
-import Header from "../Components/Header3";
+import Header from "../Components/NavbarHome";
 
 import MiPerfil from '../Components/MiPerfil'
 import Grupos from '../Teacher-pages/Grupos'
