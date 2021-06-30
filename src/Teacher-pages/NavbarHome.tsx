@@ -4,6 +4,7 @@ import "mdbreact/dist/css/mdb.css";
 import "./Styles/Navbar.css";
 import logo from "../img/Group 10.png";
 import ProfileMenu from "../Components/ProfileMenu"
+import { NavLink } from "react-router-dom";
 import { Search } from "react-bootstrap-icons";
 import {
   Navbar,
@@ -29,10 +30,10 @@ const NavbarHome: React.FC = () => {
           </Row>
         </Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="/page/perfil"> Mi perfil </Nav.Link>
-          <Nav.Link href="/page/lecciones"> Lecciones </Nav.Link>
-          <Nav.Link href="/page/grupos">Mis cursos</Nav.Link>
-          <Nav.Link href="/page/materias"> Materias </Nav.Link>
+      <NavLink to="/page/perfil" activeClassName="selected">  Mi perfil </NavLink> 
+        <NavLink to="/page/lecciones" activeClassName="selected"> Lecciones </NavLink> 
+        <NavLink to="/page/grupos" activeClassName="selected">Mis cursos </NavLink>
+        <NavLink to="/page/materias" activeClassName="selected"> Materias  </NavLink>
         </Nav>
         <Row>
           <Col className="md-3">

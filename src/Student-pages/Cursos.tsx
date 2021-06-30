@@ -5,7 +5,7 @@ import 'mdbreact/dist/css/mdb.css';
 import './Courses.css';
 import {Row, Col } from 'react-bootstrap';
 import Card from '../Components/cardSubject';
-import NoteBoard from '../Components/NoteBoard';
+import NoteBoard from './NoteBoard';
 import Toolbar from '../Components/Toolbar';
 
 const Cursos : React.FC= () => {

@@ -6,7 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url(img/lookin.jpg) no-repeat fixed center center #333;
+  background: url(img/lookin.png) no-repeat fixed center center #333;
   background-size: cover;
 }
 

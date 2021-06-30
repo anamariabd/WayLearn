@@ -5,18 +5,56 @@ import 'mdbreact/dist/css/mdb.css';
 import {Row, Col } from 'react-bootstrap';
 import Card from '../Components/cardSubject';
 
+interface signature{
+
+  title: string,
+  path: string
+}
+
+const ListSignatures: signature[] = [
+  {  title: "Sociales",
+    path: "sociales"
+  },
+  {
+   title: "Artistica",
+   path: "artistica"
+  },
+  {
+    title: "Español",
+    path: "español"
+  },
+  {
+    title: "Matematicas",
+    path: "matematicas"
+  },
+  {
+    title: "Etica",
+    path: "etica"
+  },
+  {
+    title: "ingles",
+    path: "ingles"
+  },
+  {
+    title: "Naturales",
+    path: "naturales"
+  },
+  {
+    title: "Informatica",
+    path: "informatica"
+  }
+]
+
 const Materias : React.FC= () => {
   return (
     <Col className="container">
-            <Row>
-                <Card titulo="Sociales" link="/sociales"/>
-                <Card titulo="Artistica" link="/artistica"/>
-                <Card titulo="Español" link="/español"/>
-                <Card titulo="Matematicas" link="/matematicas"/>
-                <Card titulo="Etica" link="/etica"/>
-                <Card titulo="ingles" link="/ingles"/>
-                <Card titulo="Naturales" link="/naturales"/>
-                <Card titulo="Informatica" link="/informatica"/>
+      <Row>
+        {ListSignatures.map((sig, index) => {
+       
+       return (
+        <Card key={index} titulo={sig.title} link={sig.title}/>
+       );
+     })}
             </Row>
           </Col>
     

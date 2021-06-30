@@ -4,20 +4,21 @@ import { Col, Row} from 'react-bootstrap';
 import logo from '../img/Group 13.png';
 import ProfileMenu from "./ProfileMenu"
 
-const Header3: React.FC = () => {
+const NavbarHome: React.FC = () => {
   return (
     <>
     <Row className="fila" >
       <Col md="2">
         <img src={logo} alt="logo" className="logoBarra3" />
       </Col>
-      <Col className="cBarraBusqueda" md="10">
+      <Col className="cBarraBusqueda" md="9">
         <input type="text" placeholder="Busqueda..." className="barraBusqueda"/>
-      </Col>
+        </Col>
+        <Col><ProfileMenu /></Col>
+      
       </Row>
-      <ProfileMenu/>
     </>
   );
 }
 
-export default Header3;
+export default NavbarHome;

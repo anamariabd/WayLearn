@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext} from "react";
+import { useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import "mdbreact/dist/css/mdb.css";
 import "./Styles/Grupos.css";
@@ -8,8 +8,7 @@ import { Col, Card, Row, CardDeck, Modal } from "react-bootstrap";
 import { User, Group, CreateGroup } from "../Interfaces";
 
 const Grupos = () => {
-
- // const courseContext = useContext(CourseContext);
+  // const courseContext = useContext(CourseContext);
   const [listaCursos, setCursos] = useState<Group[]>([]);
   const [tam, setTam] = useState();
   const [show, setShow] = useState(false);
@@ -27,40 +26,37 @@ const Grupos = () => {
   }
 
   useEffect(() => {
-    
-  let user: User;
-  let userCurrent = UserService.getCurrentUser();
-  let Id: any;
+    let user: User;
+    let userCurrent = UserService.getCurrentUser();
+    let Id: any;
 
-  if (userCurrent != null) {
-    user = JSON.parse(userCurrent);
-    Id = user.id;
-    
-    CourseService.getCourses(Id)
-    .then((e: any) => {
-      setCursos(e.data);
-      setTam(e.data.length);
+    if (userCurrent != null) {
+      user = JSON.parse(userCurrent);
+      Id = user.id;
 
-    })
-    .catch((error:any) => {
-      console.log(error);
-    });
-
-  }
+      CourseService.getCourses(Id)
+        .then((e: any) => {
+          setCursos(e.data);
+          setTam(e.data.length);
+        })
+        .catch((error: any) => {
+          console.log(error);
+        });
+    }
   }, []);
 
   const CrearCurso = () => {
     handleClose();
-    let num: any = Number(tam)+1;
+    let num: any = Number(tam) + 1;
     let curso: CreateGroup = {
       idTeacher: Number(Id),
       grupo: { number: String(num), amount: 30 },
     };
 
-    CourseService.createCourse(curso).then( res => {
+    CourseService.createCourse(curso).then((res) => {
       console.log(res.data);
-    
-    setCursos(listaCursos.concat(res.data));
+
+      setCursos(listaCursos.concat(res.data));
     });
   };
 
@@ -76,7 +72,8 @@ const Grupos = () => {
               onClick={() => {
                 handleShow();
               }}
-              className="btn" id="bis2"
+              className="btn"
+              id="bis2"
             >
               Crear grupo
             </button>
@@ -85,10 +82,10 @@ const Grupos = () => {
 
         <Col className="container">
           <CardDeck>
-            {listaCursos.map((Grupo, index) => {
+            {listaCursos.map((Grupo) => {
               return (
                 <Link
-                  to={"grupo/"+Grupo.id}
+                  to={"grupo/" + Grupo.id}
                   key={Grupo.id}
                   className="course"
                   onClick={() => console.log(Grupo.id)}
