@@ -39,6 +39,16 @@
     margin-left: -250px;
 }
 
+.navbar-nav a{
+  color: #979797 !important;
+  padding-left: 12px;
+  text-decoration: none;
+}
+
+.navbar-nav .selected{
+  font-weight: bold;
+}
+
 #inp{
   height: 3%;
 }

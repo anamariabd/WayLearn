@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap-material-design'
 import 'jquery'
 import { Col,Row } from 'react-bootstrap';
 import Note from '../Components/Note';

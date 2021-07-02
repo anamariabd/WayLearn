@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.8.3",
     "@types/axios": "^0.14.0",
     "@types/radium": "^0.24.3",
+    "@types/react-select": "^4.0.16",
     "@unform/core": "^2.1.6",
     "@unform/web": "^2.1.6",
     "bootstrap": "^4.6.0",
@@ -18,10 +19,13 @@
     "radium": "^0.26.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.2",
+    "react-bootstrap-icons": "^1.4.0",
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.15.5",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
+    "react-select": "^4.3.1",
+    "reactstrap": "^8.9.0",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

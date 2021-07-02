@@ -13,6 +13,7 @@ const FormRegister = () => {
     
      useEffect(() => {
          if (status === "success") {
+             setLoading(false);
              alert("Registro exitoso! Inicie sesion ");
              history.replace("/login")
          }
@@ -23,8 +24,9 @@ const FormRegister = () => {
 
         setLoading(true);
 
-        var type = data.option === "Docente"? "teacher": data.option === "Estudiante"?"student":"undefined"
+        var type = data.option === "Docente" ? "teacher" : "student";
         
+        console.log(type);
         var user = {
             "firstName": data.firstName,
             "lastName": data.lastName,
@@ -33,8 +35,12 @@ const FormRegister = () => {
             "cc": data.cc
         }
         userService.createUser(user, type).then(res => {
+            
+            setLoading(false);
             setStatus("success");
         }).catch(err => {
+            console.log("EROR");
+            console.log(err);
             setLoading(false);
             setStatus("failed");
         });

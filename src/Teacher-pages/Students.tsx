@@ -9,35 +9,27 @@ import CourseService from "../Services/CourseService"
 import { Col, Row, Modal, FormControl, Form } from "react-bootstrap";
 import { Estudiante } from "../Interfaces";
 
-// const Grupo: Estudiante[] = [
-//   {
-//     firstName: "Ana",
-//     lastName: "Buenahora",
-//     id: "1",
-//   },
-//   {
-//     firstName: "Fredy",
-//     lastName: "Caballero",
-//     id: "2",
-//   }
-// ];
 const Students = () => {
 
   const { id } = useParams<{ id: string }>();
  // const { selectedCourse } = useContext(CourseContext);
-  
+  var i = 0;
   const [students, setStudents] = useState<Estudiante[]>([]);
   const [Grupo, setListstudents] = useState<Estudiante[]>([]);
+  const [Number, setNumber] = useState("");
   const [show, setShow] = useState(false);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
 
-    StudentService.studentsAlone().then(
-      (e: any) => {
-        console.log(e.data);
-        setStudents(e.data);
-        }
+    StudentService.studentsAlone().then((e: any) => { setStudents(e.data); });
+
+    CourseService.getCourseById(id).then(
+      (res: any) => {
+        console.log(res.data);
+        console.log(res.data.number);
+        setNumber(res.data.Number)
+      }
     )
     
     CourseService.getStudentsByGroup(id).then(
@@ -50,13 +42,27 @@ const Students = () => {
     
   },[])
   
-  const addStudent = (student:string) => {
+  const addStudent = (IdStudent:string) => {
    
-    console.log(student);
-    let obj = {"student":student}
+    let obj = { "student": IdStudent }
+    let newStudent: Estudiante;
+
     StudentService.addStudent(id, obj).then((res) => {
+       StudentService.getStudentByid(IdStudent).then((res) => {
+          newStudent = {
+          firstName: res.data.firstName,
+          lastName: res.data.lastName,
+          email: res.data.email,
+          cc: res.data.cc,
+          id: res.data.id
+         }
+         
+         console.log(typeof res.data.id)
+         console.log(newStudent);
+        
+         setListstudents(Grupo.concat(newStudent));
+       });
       
-      //setListstudents(students.concat(res.data))
       setShow(false);
     
     });
@@ -70,7 +76,7 @@ const Students = () => {
 
   return (
     <>
-    <h1 className="subtitle"> <strong> Grupo {id} </strong></h1>
+    <h1 className="subtitle"> <strong> Grupo {Number} </strong></h1>
       <Col>
         <Col className="container">
           <Row>
@@ -95,11 +101,12 @@ const Students = () => {
           <Row className="notas">
             <Col>
               {Grupo.map((student, index) => {
+                i = i + 1;
                 return (
                   <Link key={index} to={"/page/student/" + student.id}>
                     <h3>
                       <strong>
-                        {student.id +
+                        { i +
                           ". " +
                           student.firstName +
                           " " +

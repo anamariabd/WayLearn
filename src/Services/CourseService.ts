@@ -22,6 +22,12 @@ class CourseService{
     });
   }
 
+  async getCourseById(id: String) {
+    
+    return await axios.get(GROUP_API_BASE_URL + "/" + id);
+
+  }
+
   
   async getStudentsByGroup(id:string) {
     return await axios.get(GROUP_API_BASE_URL + "/student/" + id, {

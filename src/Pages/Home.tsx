@@ -1,16 +1,17 @@
 import { useHistory} from 'react-router-dom'
-import "mdbreact/dist/css/mdb.css";
 import UserService from '../Services/UserService'
 import Cursos from "../Student-pages/Cursos";
 import Materia from '../Student-pages/SingularCourse';
-import Header from "../Components/Header3";
-
+import Header from "../Components/NavbarHome";
+import Footer from "../Components/Footer"
 import MiPerfil from '../Components/MiPerfil'
 import Grupos from '../Teacher-pages/Grupos'
 import Students from '../Teacher-pages/Students'
 import Materias from '../Teacher-pages/Materias'
 import NavbarHome from "../Teacher-pages/NavbarHome";
 import Student from '../Teacher-pages/Student'
+import Lessons from "../Teacher-pages/Lesson/Lessons"
+import Create from "../Teacher-pages/Lesson/CreateLesson"
 
 import Error from './Error404'
 import {User} from '../Interfaces'
@@ -36,8 +37,10 @@ const Home = () => {
   return (
     <> 
       {TypeUser === "teacher" && (
-        <div>
+        <>
+
           <NavbarHome />
+
           {
         (() => {
           switch (selected) {
@@ -48,7 +51,7 @@ const Home = () => {
                 <Students/>
               </>)
             case 'lecciones':
-              return (<div>   <h1 className="subtitle"> <strong> Lecciones </strong></h1> </div>)
+              return ( <Lessons/> )
             case 'student':
               return (<Student/>);
             case 'perfil':
@@ -56,14 +59,17 @@ const Home = () => {
                 <MiPerfil role={TypeUser} name="Docente"/>
               </>);
               case 'materias':
-                return (<div>   <h1 className="subtitle"> <strong> Materias </strong></h1>  <Materias/> </div>);
+              return (<>   <h1 className="subtitle"> <strong> Materias </strong></h1>  <Materias /> </>);
+            case 'create':
+              return(<Create/>)
             default:
              return (
              <Error/>
             )
           }
-        })()}
-        </div>
+            })()}
+          
+        </>
       )}
 
       {TypeUser === "student" && (
@@ -83,7 +89,8 @@ const Home = () => {
              <Error/>
             )
           }
-        })()}
+            })()}
+          <Footer />
         </Container>
       )}
     </>

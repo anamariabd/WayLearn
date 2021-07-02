@@ -1,14 +1,11 @@
 import React from "react";
 import "./App.css";
-import 'bootstrap-material-design'
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { BrowserRouter, Route } from 'react-router-dom';
 import index from './Pages/Index';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import Home from './Pages/Home';
-import Courses from './Student-pages/Cursos';
-
 
 function App() {
   return (
@@ -17,8 +14,7 @@ function App() {
           <Route exact path="/" component={index}/>
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Register} />
-          <Route exact path="/page/:name/:id?" component={Home} /> {/* Esto es privado */ }
-          <Route exact path="/courses" component={Courses} />
+          <Route exact path="/page/:name/:id?" component={Home} />
         </BrowserRouter>        
     </div>
   );
